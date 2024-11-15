@@ -146,6 +146,6 @@ def main(image_path, onnx_model_path, output_image_path):
 
 if __name__ == "__main__":
     image_path = '1.jpeg'  # 替换为你自己的图像路径
-    onnx_model_path = 'best.onnx'  # 替换为你的ONNX模型路径
+    onnx_model_path = 'fire.onnx'  # 替换为你的ONNX模型路径
     output_image_path = 'result_image.jpg'  # 替换为你希望保存结果的路径
     main(image_path, onnx_model_path, output_image_path)

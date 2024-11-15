@@ -1,0 +1,1 @@
+pulsar2 build --input ../onnx/fire.onnx --output_dir yolov5s/ --config config/yolov5s_config.json

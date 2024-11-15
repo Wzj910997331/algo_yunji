@@ -1,0 +1,43 @@
+{
+  "model_type": "ONNX",
+  "npu_mode": "NPU1",
+  "quant": {
+    "input_configs": [
+      {
+        "tensor_name": "images",
+        "calibration_dataset": "./dataset/coco_4.tar",
+        "calibration_size": 4,
+        "calibration_mean": [0, 0, 0],
+        "calibration_std": [255.0, 255.0, 255.0]
+      }
+    ],
+    "calibration_method": "MinMax",
+    "precision_analysis": true,
+    "precision_analysis_method":"EndToEnd"
+  },
+  "input_processors": [
+    {
+      "tensor_name": "images",
+      "tensor_format": "RGB",
+      "tensor_layout": "NCHW",
+      "src_format": "YUV420SP",
+      "src_dtype": "U8",
+      "src_layout": "NHWC",
+      "csc_mode": "LimitedRange"
+    }
+  ],
+  "output_processors": [
+    {
+      "tensor_name": "outpu1"
+    },
+    {
+      "tensor_name": "420"
+    },
+    {
+      "tensor_name": "432"
+    }
+  ],
+  "compiler": {
+    "check": 0
+  }
+}
